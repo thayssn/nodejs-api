@@ -4,14 +4,13 @@
   "description": "NodeJS API",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server.js",
+    "start": "nodemon server.js",
     "test": "mocha ./src --timeout 10000"
   },
   "author": "Thays dos Santos Neves",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "fs": "0.0.1-security",
     "mongoose": "^5.5.11",

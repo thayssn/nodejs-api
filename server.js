@@ -1,5 +1,4 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const app = express();
 
@@ -10,13 +9,13 @@ nunjucks.configure('./src/views', {
     express: app
 });
 
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(bodyParser.json());
 app.use(morgan('tiny'));
 app.use('/uploads', express.static('uploads'));
 
+// routes
 require('./src/controllers/authController')(app);
 require('./src/controllers/users')(app);
+
 
 app.get('/', function(req, res) {
     res.render('index.html');
